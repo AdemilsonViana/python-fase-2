@@ -47,4 +47,5 @@ if len(Produtos) > 5:
 Produtos_json = json.dumps(Produtos, indent=4)
 with open('1_5_arquivo_produto.json', 'w') as f:
     f.write(Produtos_json)
+f.close()
 # %%
