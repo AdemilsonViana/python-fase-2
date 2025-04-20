@@ -43,6 +43,12 @@ if len(Produtos) > 4:
         resposta = str(input('Deseja cadastrar mais produtos? (sim ou não): '))
     else: # fluxo "não"
         print('Cadastro encerrado')
+try:
+        with open(nome_arquivo, 'w', encoding='utf-8') as arquivo_json:
+            json.dump(lista_produtos, arquivo_json, ensure_ascii=False, indent=4)
+        print(f"Dados salvos com sucesso no arquivo: {nome_arquivo}")
+except Exception as e:
+        print(f"Ocorreu um erro ao salvar para JSON: {e}")
 #%%
 Produtos_json = json.dumps(Produtos, indent=4)
 
