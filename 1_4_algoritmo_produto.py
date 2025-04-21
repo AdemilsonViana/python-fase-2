@@ -1,9 +1,8 @@
 #%%
+# Import libs
 import json
 #%%
 #Função para cadastrar produtos
-Produtos = {}
-
 def cadastrar_novo_produto():
     # Descrição do produto
     desc_produto = str(input("descrição do produto: "))
@@ -23,13 +22,16 @@ def cadastrar_novo_produto():
     # Valor do ISMS do produto
     valor_ISMS = lambda valor : valor * 0.18
     # Adiciona o produto ao dicionário
-    Produtos[desc_produto] = {'valor': valor_produto, 'tipo': tipo_produto, 'valor ISMS': valor_ISMS(valor_produto)}
+    Produtos[desc_produto] = {'valor': f'{valor_produto:.2f}', 'tipo': tipo_produto, 'valor ISMS': f'{valor_ISMS(valor_produto):.2f}'}
     print(f'quantidade de produtos cadastrados: {len(Produtos)}')
     # Se for menos do que 6
     if len(Produtos) < 5:
         print(f'É preico cadastrar pelo menos mais {5 - len(Produtos)}')
 
-#%% Cadastando uma lista de produtos
+#%%
+# Cadastando uma lista de produtos
+Produtos = {}
+
 while len(Produtos) <= 4:
     cadastrar_novo_produto()
 if len(Produtos) > 4:
@@ -43,16 +45,16 @@ if len(Produtos) > 4:
         resposta = str(input('Deseja cadastrar mais produtos? (sim ou não): '))
     else: # fluxo "não"
         print('Cadastro encerrado')
+    
+#%%
+# Arquivo JSON
+PRODUTOS_JSON = json.dumps(Produtos, indent=4, ensure_ascii=False) # converte o DICT para JSON
+NOME_ARQUIVO = '1_5_arquivo_produto.json'
+
+# Escreve o arquivo JSON
 try:
-        with open(nome_arquivo, 'w', encoding='utf-8') as arquivo_json:
-            json.dump(lista_produtos, arquivo_json, ensure_ascii=False, indent=4)
-        print(f"Dados salvos com sucesso no arquivo: {nome_arquivo}")
+    with open(f'{NOME_ARQUIVO}', 'w', encoding='utf-8') as arquivo_json:
+        arquivo_json.write(PRODUTOS_JSON)
+    print(f"Dados salvos com sucesso no arquivo: {NOME_ARQUIVO}")
 except Exception as e:
         print(f"Ocorreu um erro ao salvar para JSON: {e}")
-#%%
-Produtos_json = json.dumps(Produtos, indent=4)
-
-with open('1_5_arquivo_produto.json', 'w') as f:
-    f.write(Produtos_json)
-print('Arquivo salvo')
-# %%

@@ -1,27 +1,32 @@
 {
-    "Notebool Dell Inspiron 15": {
-        "valor": 5879.99,
-        "tipo": "",
-        "valor ISMS": 1058.3981999999999
+    "Notebook Dell Inspiron 15": {
+        "valor": "5879.99",
+        "tipo": "Eletrônico",
+        "valor ISMS": "1058.40"
     },
-    "IPhone 13 256GB": {
-        "valor": 3879.99,
-        "tipo": "",
-        "valor ISMS": 698.3982
+    "Iphone 13 256GB": {
+        "valor": "3879.99",
+        "tipo": "Eletrônico",
+        "valor ISMS": "698.40"
     },
     "Bicicleta Aro 29 KRW Spotlight": {
-        "valor": 809.1,
-        "tipo": "",
-        "valor ISMS": 145.638
+        "valor": "809.10",
+        "tipo": "Esporte",
+        "valor ISMS": "145.64"
     },
     "Raquete de Tenis Babolat Pure Aero 98": {
-        "valor": 1504.95,
-        "tipo": "",
-        "valor ISMS": 270.891
+        "valor": "1504.95",
+        "tipo": "Esporte",
+        "valor ISMS": "270.89"
     },
     "Racao Seca Felina Royal Canin Gastrointestinal Fibre Response 1.5kg": {
-        "valor": 288.99,
-        "tipo": "",
-        "valor ISMS": 52.0182
+        "valor": "288.99",
+        "tipo": "Pets",
+        "valor ISMS": "52.02"
+    },
+    "Nintendo Switch OLED": {
+        "valor": "2484.17",
+        "tipo": "Games",
+        "valor ISMS": "447.15"
     }
 }
